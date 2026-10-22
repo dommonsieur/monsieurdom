@@ -95,6 +95,8 @@ h2 {
   margin: 56px 0 18px;
 }
 .subtitle { font-style: italic; color: var(--muted); margin: 0; }
+.center { text-align: center; }
+.titles-center h2 { text-align: center; }
 
 p { margin: 0 0 1.15em; }
 .dropcap::first-letter {

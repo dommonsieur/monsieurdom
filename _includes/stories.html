@@ -1,0 +1,10 @@
+{%- comment %} Story cards, built from _stories/. Shared by the welcome page and How it works. {% endcomment %}
+  <h2 class="center">Stories</h2>
+  <p class="intro center">If you'd like to know what an evening with me feels like, here is one, told from my side.</p>
+  {%- for story in site.stories %}
+  <a class="story" href=".{{ story.url }}">
+    <span class="title">{{ story.title }}</span>
+    <span class="teaser">{{ story.teaser }}</span>
+    <span class="note">{{ story.meta }}</span>
+  </a>
+  {%- endfor %}
