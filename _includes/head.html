@@ -1,0 +1,13 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+{%- comment %} Neutral titles: the tab title can show on her lock screen or in her history. {% endcomment %}
+<title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
+<meta name="description" content="{{ site.description }}">
+<meta name="theme-color" content="#070606">
+{%- if page.canonical %}
+<link rel="canonical" href="{{ page.canonical }}">
+{%- endif %}
+<link rel="icon" href="/favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">

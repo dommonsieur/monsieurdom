@@ -1,0 +1,27 @@
+# Monsieur Dom. Run locally with: bundle exec jekyll serve
+title: Monsieur Dom
+description: Pour votre plaisir.
+url: https://monsieurdom.com
+
+# Used by every "Write to me" link.
+contact_email: dommonsieur@proton.me
+contact_subject: Bonsoir
+
+# Stories live in _stories/ and are served at /<file-name>.
+collections:
+  stories:
+    output: true
+    permalink: /:name
+
+defaults:
+  - scope: { type: stories }
+    values:
+      layout: story
+      footer_note: Names and identifying details have been changed.
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - mise.toml
+  - README.md
+  - .claude
