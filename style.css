@@ -385,6 +385,40 @@ h3 {
   line-height: 1.6;
   color: var(--muted);
 }
+/* how it works: the three rules */
+ol.rules {
+  list-style: none;
+  counter-reset: rule;
+  margin: 28px 0 24px;
+  padding: 0;
+}
+ol.rules > li {
+  counter-increment: rule;
+  position: relative;
+  margin: 0 0 14px;
+  padding: 22px 26px 6px 92px;
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  background: rgba(0, 0, 0, .35);
+}
+ol.rules > li::before {
+  content: counter(rule, upper-roman);
+  position: absolute;
+  left: 0;
+  top: 18px;
+  width: 72px;
+  font-family: Cinzel, serif;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 1;
+  color: var(--accent-soft);
+  text-align: center;
+  text-shadow: 0 0 18px rgba(179, 18, 31, .6);
+}
+ol.rules > li:last-child { border-color: rgba(179, 18, 31, .45); }
+ol.rules h3 { font-size: 15px; color: #f4ebe6; margin-bottom: 6px; }
+ol.rules p { line-height: 1.55; }
+
 /* welcome page: traffic lights. The only green and amber on the site: small and muted, a signal. */
 .lights {
   margin: 28px 0 20px;
@@ -531,6 +565,8 @@ footer p { margin: 0 0 .4em; }
   ol.steps li::before { width: 28px; }
   .promise, .invite { padding: 22px 18px; }
   .story { padding: 20px; }
+  ol.rules > li { padding: 18px 18px 4px 60px; }
+  ol.rules > li::before { width: 50px; top: 16px; font-size: 26px; }
   .contrast { grid-template-columns: 1fr; gap: 24px; }
   .contrast > div { display: block; }
   .contrast ul { display: block; list-style: none; margin: 0; padding: 0; }
