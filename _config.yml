@@ -7,17 +7,42 @@ url: https://monsieurdom.com
 contact_email: dommonsieur@proton.me
 contact_subject: Bonsoir
 
-# Stories live in _stories/ and are served at /<file-name>.
+# THE FIVE HOURS quote on the welcome page, in both languages. These are a real woman's words:
+# publish them only once she has agreed.
+#   she_agreed: false → shows the fallback line (no caption)
+#   she_agreed: true  → shows her quote. blessing: true adds "shared with her blessing" to the caption.
+five_hours:
+  she_agreed: true
+  blessing: true
+
+# Stories live in _stories/en/ and _stories/fr/.
+# English is served at /<file-name>, French at /fr/<file-name>.
 collections:
   stories:
     output: true
-    permalink: /:name
 
+# Languages: English at the root, French under fr/. A page and its translation share
+# a `ref`, which is how the language switch and the redirect find each other.
+# Short UI wording for both languages lives in _data/i18n.yml.
 defaults:
+  - scope: { path: "" }
+    values:
+      lang: en
+  - scope: { path: "fr" }
+    values:
+      lang: fr
   - scope: { type: stories }
     values:
       layout: story
-      footer_note: Names and identifying details have been changed.
+      footer_note: changed_details
+  - scope: { path: "_stories/en", type: stories }
+    values:
+      lang: en
+      permalink: /:name
+  - scope: { path: "_stories/fr", type: stories }
+    values:
+      lang: fr
+      permalink: /fr/:name
 
 exclude:
   - Gemfile

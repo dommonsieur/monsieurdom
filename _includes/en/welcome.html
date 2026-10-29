@@ -1,5 +1,6 @@
 {%- comment %}
-  The welcome page. Shared by index.html (/) and bonsoir.html (/bonsoir).
+  The English welcome page. Shared by index.html (/) and bonsoir.html (/bonsoir).
+  The French version is _includes/fr/welcome.html: keep the two in step.
   Not explicit: this is the safe front door; the stories sit one click behind it.
 {% endcomment %}
   <header>
@@ -28,19 +29,11 @@
     <p>What happens between us stays between us. I don't share names, photos or details, unless you tell me you'd like to be part of a story.</p>
   </div>
 
-  {%- comment %}
-    THE FIVE HOURS. These are a real woman's words: publish them only once she has agreed.
-    To switch, change ONE line below:
-      she_agreed = false  → shows the fallback line (no caption)
-      she_agreed = true   → shows her quote. Set blessing = true to add "shared with her blessing" to the caption.
-  {% endcomment %}
-  {%- assign she_agreed = true %}
-  {%- assign blessing = true %}
-
+  {%- comment %} THE FIVE HOURS. Her agreement is switched in _config.yml (five_hours), for both languages. {% endcomment %}
   <figure class="five-hours">
-    {%- if she_agreed %}
+    {%- if site.five_hours.she_agreed %}
     <blockquote>"For five hours, I didn't think about any of it."</blockquote>
-    <figcaption>— After our first night{% if blessing %}, shared with her blessing{% endif %}</figcaption>
+    <figcaption>— After our first night{% if site.five_hours.blessing %}, shared with her blessing{% endif %}</figcaption>
     {%- else %}
     <blockquote>"What I love most is the moment she stops thinking about everything else."</blockquote>
     {%- endif %}

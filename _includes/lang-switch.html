@@ -1,0 +1,9 @@
+{%- comment %}
+  "English · Français" in the footer. Links to the same page in the other language
+  (or that language's home page if there's no translation) and remembers the choice.
+{% endcomment %}
+{%- assign other_t = site.data.i18n[other_lang] %}
+    <p class="lang-switch">
+      <span>{{ t.language }}</span> ·
+      <a href="{% if twin %}{{ twin.url }}{% else %}{{ other_t.home }}{% endif %}" hreflang="{{ other_lang }}" lang="{{ other_lang }}" onclick="try { localStorage.setItem('lang', '{{ other_lang }}') } catch (e) {}">{{ other_t.language }}</a>
+    </p>

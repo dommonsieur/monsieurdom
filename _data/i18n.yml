@@ -1,0 +1,34 @@
+# Short UI wording shared by several pages, per language.
+# Whole pages are translated as separate files (English at the root, French in fr/).
+
+en:
+  language: English
+  home: /
+  adults_only: For adults only (18+).
+  footer_notes:
+    consent: Everything here is between consenting adults.
+    changed_details: Names and identifying details have been changed.
+  contact_heading: When you're ready
+  write_to_me: Write to me
+  contact_hint: Tell me where we met or talked. I'll take it from there.
+  stories_heading: Stories
+  stories_intro: If you'd like to know what an evening with me feels like, here is one, told from my side.
+  story_series: Adventures of a Dom
+  story_signoff: That's what I do. Pour votre plaisir.
+  story_invite: If you'd like a night like this, write to me. We start with a drink, and you set the pace.
+
+fr:
+  language: Français
+  home: /fr/
+  adults_only: Réservé aux adultes (18+).
+  footer_notes:
+    consent: Tout ce qui se passe ici se passe entre adultes consentants.
+    changed_details: Les noms et les détails permettant de reconnaître quelqu'un ont été modifiés.
+  contact_heading: Quand vous serez prête
+  write_to_me: Écrivez-moi
+  contact_hint: Dites-moi où nous nous sommes rencontrés, ou comment nous avons échangé. Je m'occupe du reste.
+  stories_heading: Histoires
+  stories_intro: Si vous voulez savoir ce qu'est une soirée avec moi, en voici une, racontée de mon point de vue.
+  story_series: Aventures d'un Dom
+  story_signoff: Voilà ce que je fais. Pour votre plaisir.
+  story_invite: Si vous aimeriez vivre une nuit comme celle-ci, écrivez-moi. On commence par un verre, et c'est vous qui donnez le rythme.

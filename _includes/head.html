@@ -9,5 +9,23 @@
 {%- if page.canonical %}
 <link rel="canonical" href="{{ page.canonical }}">
 {%- endif %}
+{%- if twin %}
+<link rel="alternate" hreflang="{{ page.lang }}" href="{{ page.url }}">
+<link rel="alternate" hreflang="{{ other_lang }}" href="{{ twin.url }}">
+{%- comment %}
+  Language redirect, before anything paints. A choice made with the footer's language
+  switch (saved in this browser) always wins. Otherwise only English pages move, and only
+  when the browser's first language is French, so a shared French link is never bounced.
+{% endcomment %}
+<script>
+  (function () {
+    var here = "{{ page.lang }}", saved;
+    try { saved = localStorage.getItem("lang"); } catch (e) {}
+    var browser = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
+    var want = saved || (here === "en" && browser === "fr" ? "fr" : here);
+    if (want === "{{ other_lang }}") location.replace("{{ twin.url }}" + location.hash);
+  })();
+</script>
+{%- endif %}
 <link rel="icon" href="/favicon.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">

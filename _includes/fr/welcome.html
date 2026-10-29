@@ -1,0 +1,53 @@
+{%- comment %}
+  The French welcome page. Shared by fr/index.html (/fr/) and fr/bonsoir.html (/fr/bonsoir).
+  The English version is _includes/en/welcome.html: keep the two in step.
+  Not explicit: this is the safe front door; the stories sit one click behind it.
+{% endcomment %}
+  <header>
+    <img class="avatar" src="/avatar.png" alt="" width="64" height="64">
+    <p class="series">Monsieur Dom</p>
+    <h1 class="grand">Bonsoir.</h1>
+    <p class="subtitle">Si vous êtes ici, c'est que nous nous sommes rencontrés ou que nous avons parlé, et que vous étiez curieuse.</p>
+  </header>
+
+  <p>Vous n'avez rien à faire ici. Vous pouvez fermer cette page, et ce sera tout. Personne ne saura que vous l'avez regardée.</p>
+
+  <p>Mais si vous êtes encore là, laissez-moi vous dire ce que je propose.</p>
+
+  <h2>Qu'est-ce qu'un Dom du plaisir&nbsp;?</h2>
+
+  <p>J'aime mener, mais ce qui m'excite le plus, c'est de découvrir ce qui vous fait plaisir, à <em>vous</em>, dans la tête comme dans le corps. Je mène&nbsp;; vous recevez. Vous n'avez rien à prouver, personne à impressionner, personne dont prendre soin. Le temps d'une soirée, la seule chose qui compte, c'est ce que vous ressentez.</p>
+
+  <h2>Toujours votre choix</h2>
+  <ol class="steps">
+    <li><strong>Vous écrivez en premier</strong>, si et quand vous le voulez. Je ne vous relancerai pas.</li>
+    <li><strong>Nous prenons un verre</strong> dans un lieu public. Sans obligation.</li>
+    <li><strong>Vous pouvez dire stop</strong> à tout moment, et j'arrête. Sans poser de questions.</li>
+  </ol>
+
+  <div class="promise">
+    <p>Ce qui se passe entre nous reste entre nous. Je ne partage ni noms, ni photos, ni détails, sauf si vous me dites que vous aimeriez faire partie d'une histoire.</p>
+  </div>
+
+  {%- comment %} THE FIVE HOURS. Her agreement is switched in _config.yml (five_hours), for both languages. {% endcomment %}
+  <figure class="five-hours">
+    {%- if site.five_hours.she_agreed %}
+    <blockquote>«&nbsp;Pendant cinq heures, je n'ai pensé à rien de tout ça.&nbsp;»</blockquote>
+    <figcaption>— Après notre première nuit{% if site.five_hours.blessing %}, partagé avec son accord{% endif %}</figcaption>
+    {%- else %}
+    <blockquote>«&nbsp;Ce que j'aime le plus, c'est le moment où elle arrête de penser à tout le reste.&nbsp;»</blockquote>
+    {%- endif %}
+  </figure>
+
+  <h2 class="center">En savoir plus</h2>
+  <a class="story" href="/fr/comment-ca-marche">
+    <span class="title">Comment ça marche</span>
+    <span class="teaser">Ce qu'est un Dom du plaisir et ce qu'il n'est pas, du plus tendre au plus intense, les trois règles, et comment vous gardez le contrôle.</span>
+    <span class="note">Pas explicite · quelques minutes de lecture</span>
+  </a>
+
+{% include stories.html %}
+
+{% include contact.html %}
+
+  <p class="signoff">Pour votre plaisir.</p>

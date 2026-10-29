@@ -1,8 +1,10 @@
-{%- comment %} Story cards, built from _stories/. Shared by the welcome page and How it works. {% endcomment %}
-  <h2 class="center">Stories</h2>
-  <p class="intro center">If you'd like to know what an evening with me feels like, here is one, told from my side.</p>
-  {%- for story in site.stories %}
-  <a class="story" href=".{{ story.url }}">
+{%- comment %} Story cards, built from _stories/ in the page's language. Shared by the welcome page and How it works. {% endcomment %}
+{%- assign t = site.data.i18n[page.lang] %}
+{%- assign stories = site.stories | where: "lang", page.lang %}
+  <h2 class="center">{{ t.stories_heading }}</h2>
+  <p class="intro center">{{ t.stories_intro }}</p>
+  {%- for story in stories %}
+  <a class="story" href="{{ story.url }}">
     <span class="title">{{ story.title }}</span>
     <span class="teaser">{{ story.teaser }}</span>
     <span class="note">{{ story.meta }}</span>

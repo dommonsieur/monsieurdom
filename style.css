@@ -553,6 +553,8 @@ footer {
   text-align: center;
 }
 footer p { margin: 0 0 .4em; }
+footer .lang-switch { margin-top: 14px; }
+footer .lang-switch a { color: var(--ink); }
 ::selection { background: var(--accent); color: #fff; }
 
 @media (max-width: 520px) {
